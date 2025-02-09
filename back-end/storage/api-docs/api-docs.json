@@ -1,0 +1,314 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API de Gestión de Alumnos",
+        "description": "API para la gestión de alumnos y autenticación en Laravel",
+        "contact": {
+            "email": "soporte@ejemplo.com"
+        },
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8000",
+            "description": "Servidor API Principal"
+        }
+    ],
+    "paths": {
+        "/api/alumnos": {
+            "post": {
+                "tags": [
+                    "Alumnos"
+                ],
+                "summary": "Registrar un nuevo alumno",
+                "description": "Crea un nuevo registro de alumno",
+                "operationId": "e9e77b336781c9f8e41e532fef3fb69d",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "nombre",
+                                    "fecha_nacimiento",
+                                    "nombre_padre",
+                                    "nombre_madre",
+                                    "grado",
+                                    "seccion",
+                                    "fecha_ingreso"
+                                ],
+                                "properties": {
+                                    "nombre": {
+                                        "type": "string",
+                                        "example": "Juan Pérez"
+                                    },
+                                    "fecha_nacimiento": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2010-05-15"
+                                    },
+                                    "nombre_padre": {
+                                        "type": "string",
+                                        "example": "Carlos Pérez"
+                                    },
+                                    "nombre_madre": {
+                                        "type": "string",
+                                        "example": "María García"
+                                    },
+                                    "grado": {
+                                        "type": "string",
+                                        "example": "5°"
+                                    },
+                                    "seccion": {
+                                        "type": "string",
+                                        "example": "A"
+                                    },
+                                    "fecha_ingreso": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2023-02-01"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Alumno registrado correctamente"
+                    },
+                    "422": {
+                        "description": "Error en validación de datos"
+                    },
+                    "401": {
+                        "description": "No autorizado, falta token"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/alumnos/grado/{grado}": {
+            "get": {
+                "tags": [
+                    "Alumnos"
+                ],
+                "summary": "Obtener alumnos por grado",
+                "description": "Obtiene todos los alumnos de un grado específico",
+                "operationId": "890678a21598726bb531c703a6e62cfa",
+                "parameters": [
+                    {
+                        "name": "grado",
+                        "in": "path",
+                        "description": "Grado del alumno a buscar",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "5°"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Lista de alumnos"
+                    },
+                    "404": {
+                        "description": "No se encontraron alumnos"
+                    },
+                    "401": {
+                        "description": "No autorizado, falta token"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/register": {
+            "post": {
+                "tags": [
+                    "Autenticación"
+                ],
+                "summary": "Registrar un nuevo usuario",
+                "description": "Crea una cuenta de usuario y devuelve sus datos",
+                "operationId": "8a56853624e025573120a09a4c75d468",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "name",
+                                    "email",
+                                    "password",
+                                    "password_confirmation"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "Juan Pérez"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "example": "juan@example.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "password123"
+                                    },
+                                    "password_confirmation": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "password123"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Usuario registrado con éxito"
+                    },
+                    "422": {
+                        "description": "Error en validación de datos"
+                    }
+                }
+            }
+        },
+        "/api/login": {
+            "post": {
+                "tags": [
+                    "Autenticación"
+                ],
+                "summary": "Iniciar sesión",
+                "description": "Autentica al usuario y devuelve un token JWT",
+                "operationId": "a3b306d14572d1f4bd6c064b3233e7b8",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "email",
+                                    "password"
+                                ],
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "example": "juan@example.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "password123"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Inicio de sesión exitoso"
+                    },
+                    "401": {
+                        "description": "Credenciales incorrectas"
+                    }
+                }
+            }
+        },
+        "/api/me": {
+            "get": {
+                "tags": [
+                    "Autenticación"
+                ],
+                "summary": "Obtener usuario autenticado",
+                "description": "Devuelve los datos del usuario autenticado",
+                "operationId": "9d9bc556f927575aa492a88c28fe5908",
+                "responses": {
+                    "200": {
+                        "description": "Usuario autenticado"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/logout": {
+            "post": {
+                "tags": [
+                    "Autenticación"
+                ],
+                "summary": "Cerrar sesión",
+                "description": "Cierra la sesión del usuario y revoca el token",
+                "operationId": "fe8f3429cd6979b3b4517e186505f9f9",
+                "responses": {
+                    "200": {
+                        "description": "Sesión cerrada correctamente"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/refresh": {
+            "post": {
+                "tags": [
+                    "Autenticación"
+                ],
+                "summary": "Refrescar token",
+                "description": "Renueva el token JWT",
+                "operationId": "2c27d311a2876560fcb5a754b556cdc5",
+                "responses": {
+                    "200": {
+                        "description": "Token renovado"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "bearerFormat": "JWT",
+                "scheme": "bearer"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Alumnos",
+            "description": "Endpoints para gestionar alumnos"
+        },
+        {
+            "name": "Autenticación",
+            "description": "Endpoints para la autenticación de usuarios"
+        }
+    ]
+}

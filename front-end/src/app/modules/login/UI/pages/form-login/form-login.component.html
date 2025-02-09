@@ -1,0 +1,25 @@
+<div class="container-fluid d-flex align-items-center justify-content-center vh-100 login-bg">
+    <div class="p-card p-shadow-5 login-card p-5">
+        <div class="text-center mb-4">
+            <img src="assets/images/kids.png" alt="Logo" class="img-fluid" style="max-width: 180px;">
+            <h3 class="mt-3 text-white fw-bold">Bienvenido</h3>
+            <p class="text-light text-xl font-bold">Inicia sesión para gestionar tus alumnos</p>
+        </div>
+        <form>
+            <div class="mb-4">
+                <label for="username" class="form-label text-white fw-bold">Correo</label>
+                <input [(ngModel)]="email" name="email" type="email" id="username" class="p-inputtext p-component p-filled w-full custom-input" placeholder="Ingresa tu usuario" required>
+            </div>
+
+            <div class="mb-4">
+                <label for="password" class="form-label text-white fw-bold">Contraseña</label>
+                <input [(ngModel)]="password" name="password" type="password" id="password" class="p-inputtext p-component p-filled w-full custom-input" placeholder="Ingresa tu contraseña" required>
+            </div>
+
+            <div class="d-grid mb-3 text-right">
+                <button type="button" class="p-button p-component p-button-lg p-button-rounded p-button-warning" (click)="login()">Iniciar Sesión</button>
+                <p *ngIf="errorMessage" class="text-danger text-center mt-3 text-xl">{{ errorMessage }}</p>
+            </div>
+        </form>
+    </div>
+</div>

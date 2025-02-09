@@ -1,0 +1,349 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700');
+@import url('https://d1zp9uuockp8mt.cloudfront.net/uicons2021/uicons-regular-rounded/css/uicons-regular-rounded.css');
+@import url('https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css');
+@import '../node_modules/primeng/resources/primeng.min.css';
+@import '../node_modules/primeflex/primeflex.scss';
+@import '../node_modules/primeicons/primeicons.css';
+@import '../node_modules/prismjs/themes/prism-coy.css';
+
+i[class^='fi-rr-']:before {
+  display: flex !important;
+}
+
+i[class^='fi-sr-']:before {
+  display: flex !important;
+}
+
+.card {
+  box-shadow: 0 0 4px #0000001a;
+  border-top: 4px solid #1d68be;
+}
+
+.button-inactive {
+  background-color: #c30000 !important;
+  color: #fff !important;
+  opacity: 1 !important;
+}
+
+.button-active {
+  background-color: #2b7909 !important;
+  color: #fff !important;
+  opacity: 1 !important;
+}
+
+.button-favorite {
+  background-color: #d7be06 !important;
+  color: #fff !important;
+  opacity: 1 !important;
+}
+
+input[type='text'] {
+  text-transform: uppercase;
+}
+
+input[type="email"] {
+  text-transform: lowercase;
+}
+
+input[type="password"] {
+  text-transform: none;
+}
+
+input[type="message"] {
+  text-transform: none;
+}
+
+.p-password-input {
+  text-transform: none !important;
+}
+input[type="normal"] {
+  text-transform: none;
+}
+
+textarea {
+  text-transform: uppercase;
+}
+
+::-webkit-input-placeholder {
+  text-transform: none;
+}
+
+:-moz-placeholder {
+  text-transform: none;
+}
+
+::-moz-placeholder {
+  text-transform: none;
+}
+
+:-ms-input-placeholder {
+  text-transform: none;
+}
+
+::placeholder {
+  text-transform: none;
+}
+
+.float-right {
+  float: right;
+}
+
+.disabled-input {
+  color: #000 !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.p-disabled,
+.p-component:disabled {
+  opacity: 1 !important;
+}
+
+.p-chips {
+  width: 100% !important;
+}
+
+.p-chips .p-chips-multiple-container {
+  width: 100% !important;
+}
+
+.p-overlaypanel .p-overlaypanel-content {
+  max-width: 640px !important;
+}
+
+.p-chip-text {
+  width: 100% !important;
+}
+
+.p-chips input[type='text'] {
+  text-transform: lowercase !important;
+}
+
+.p-dropdown-filter {
+  width: 100% !important;
+}
+
+.customer-badge {
+  border-radius: 2px;
+  padding: 0.25em 0.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+}
+
+.icon-phone {
+  font-size: 0.8rem !important;
+}
+
+.status-secondary {
+  background-color: #eee;
+  color: #44486d;
+}
+
+.status-secondary-text {
+  color: #44486d;
+}
+
+.status-warning {
+  background-color: #feedaf;
+  color: #8a5340;
+}
+
+.invalid-feedback {
+  color: #960000;
+  border-radius: 2px;
+  padding: 0.5em 0em 0.25em 0rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 10px;
+  letter-spacing: 0.3px;
+}
+
+.invalid-border {
+  border: 1px solid #fc6161 !important;
+}
+
+.p-chips {
+  min-height: 32px !important;
+}
+
+.p-datatable-table {
+  width: 100% !important;
+}
+
+@media only screen and (max-width: 1190px) {
+  .p-dialog {
+    width: 80vw !important;
+  }
+}
+
+.layout-inline-menu {
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #d9d9e1 !important;
+  padding-bottom: 0rem !important;
+}
+
+.layout-menu-wrapper .layout-menu-container .layout-menu > li:first-child {
+  margin-top: 0.5rem !important;
+}
+
+.layout-inline-menu .layout-inline-menu-action {
+  padding: 1rem 1rem 1rem 1.6rem !important;
+}
+
+.bg-columns-table {
+  background-color: #f1f1f4 !important;
+}
+
+.text-lowercase {
+  text-transform: lowercase !important;
+}
+
+.none-text-case {
+  text-transform: none !important;
+}
+
+.text-color-primary {
+  color: var(--primary-color) !important;
+}
+
+.text-invalid {
+  color: #c30000;
+  font-size: 12px;
+}
+
+.p-breadcrumb .p-menuitem-text {
+  line-height: 1;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.p-autocomplete {
+  width: 100% !important;
+}
+
+.montserrat {
+  font-family: Montserrat;
+}
+.p-input-icon-left,
+.p-input-icon-right {
+  position: relative;
+  display: inline-block;
+}
+
+.p-icon-wrapper {
+  display: inline-flex;
+}
+
+.p-input-icon-right > .p-icon-wrapper,
+.p-input-icon-right > i:last-of-type {
+  right: 0.75rem;
+  color: #6c757d;
+}
+
+.p-inputwrapper > input:focus-within {
+  border: none;
+}
+
+.p-dialog-content {
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+}
+.p-dialog-footer {
+  margin-top: -1.5rem;
+}
+
+.w-full {
+  width: 100% !important;
+}
+
+$primary-color: #007bff;  // Azul Bootstrap
+$secondary-color: #6c757d; // Gris Bootstrap
+$success-color: #28a745;
+$danger-color: #dc3545;
+$warning-color: #ffc107;
+$light-color: #f8f9fa;
+$dark-color: #343a40;
+
+// Tipografía
+$font-family-base: 'Roboto', sans-serif;
+
+// Espaciados
+$spacing-base: 16px;
+
+// Aplicar estilos globales
+/* Fuente global */
+/* Fondo general con animación de tickets */
+/* Fondo general con gradiente */
+/* Fondo general con imagen de concierto y degradado */
+body {
+  background:
+    linear-gradient(135deg, rgba(161, 161, 162, 0.951), rgba(86, 86, 87, 0.927), rgba(105, 105, 106, 0.928)),
+    url('https://cdn.pixabay.com/photo/2018/04/16/09/32/education-3324028_1280.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto; /* Habilita el desplazamiento vertical */
+}
+
+/* Aplicar un desenfoque al fondo para hacerlo menos visible */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  filter: blur(3px) brightness(0.3); /* Desenfoque y oscurecimiento */
+  z-index: -1;
+}
+
+/* Contenedor de los tickets flotantes */
+.tickets-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Estilos de los tickets animados */
+.ticket-icon {
+  position: absolute;
+  font-size: 3.5rem;
+  color: rgba(255, 215, 0, 0.5);
+  transition: transform 0.1s linear;
+}
+/* Animación de los íconos de tickets */
+@keyframes floatAnimation {
+  from {
+    transform: translateY(100vh) rotate(0deg);
+  }
+  to {
+    transform: translateY(-10vh) rotate(360deg);
+  }
+}
+/* Enlaces globales */
+a {
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #90caf9;
+}

@@ -1,0 +1,5 @@
+<p-toast position="top-right"></p-toast>
+<app-loader [isLoading]="loading" [message]="loadingMessage"></app-loader>
+<ng-container *ngIf="!loading">
+  <router-outlet></router-outlet>
+</ng-container>

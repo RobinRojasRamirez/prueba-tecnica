@@ -1,0 +1,71 @@
+/* Estilo de la tarjeta de login */
+.login-card {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Inputs personalizados */
+  .custom-input {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding: 15px;
+    border-radius: 10px;
+  }
+  
+  .custom-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+  }
+  
+  /* Botón con colores del logo */
+  .btn-gradient {
+    background: linear-gradient(135deg, #FFD700, #FFB700);
+    border: none;
+    color: #000;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .btn-gradient:hover {
+    background: linear-gradient(135deg, #FFB700, #FFD700);
+    transform: translateY(-2px);
+  }
+  
+  .btn-gradient:active {
+    transform: translateY(2px);
+    box-shadow: none;
+  }
+
+
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  /* El contenedor debe ocupar el 100% de la altura del viewport */
+  .container-fluid {
+    display: flex;
+    align-items: center; /* Centrado vertical */
+    justify-content: center; /* Centrado horizontal */
+    height: 100vh; /* 100% de la altura de la ventana */
+    width: 100%;
+  }
+  
+  .login-bg {
+    background-color: #54575a7f; 
+  }
+  
+  .p-card {
+    width: 100%;
+    max-width: 400px; 
+    padding: 2rem;
+  }

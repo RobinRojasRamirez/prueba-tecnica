@@ -1,0 +1,31 @@
+<div class="profile-container">
+    <div class="profile-header">
+      <div class="profile-avatar">
+        <img src="assets/images/avatar.png" alt="Usuario">
+      </div>
+      <h2>{{ user?.userData?.name }}</h2>
+      <p class="profile-email">{{ user?.userData?.email }}</p>
+    </div>
+  
+    <div class="profile-info">
+      <h3>Información Personal</h3>
+      <ul>
+        <li><i class="fas fa-envelope"></i> {{ user?.userData?.email }}</li>
+        <li><i class="fas fa-phone"></i> +00 000 0000</li>
+        <li><i class="fas fa-user-tag"></i> Scanner</li>
+      </ul>
+    </div> 
+    <button
+        styleClass="button-save"
+        pButton
+        class="p-button-rounded w-15rem p-button-warning p-button-outlined"
+        type="submit"
+        icon="fas fa-sign-out-alt"
+        label="Cerrar Sesión"
+        (click)="logout()" 
+    ></button>
+  </div>
+
+
+
+

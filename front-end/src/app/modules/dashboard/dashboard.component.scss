@@ -1,0 +1,88 @@
+/* Contenedor general del home */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;  /* Asegurar que cubre toda la pantalla */
+    height: auto;
+    padding-bottom: 100px; /* Espacio para evitar solapamiento del menú */
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    overflow-y: auto; /* Permitir scroll */
+  }
+  
+  /* Estilo del menú de navegación inferior */
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #194f92;
+    backdrop-filter: blur(15px);
+    box-shadow: #194f92;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0;
+    z-index: 1000;
+    border-top-left-radius: 30px;  /* Borde redondeado en la esquina superior izquierda */
+    border-top-right-radius: 30px; /* Borde redondeado en la esquina superior derecha */
+  }
+  
+  /* Estilos de los enlaces del menú */
+  .bottom-nav a {
+    text-align: center;
+    color: #FFD700;
+    font-size: 1rem;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    padding: 5px 10px;
+    position: relative;
+  }
+  
+  /* Iconos del menú */
+  .bottom-nav i {
+    font-size: 2rem;
+    margin-bottom: 5px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Estilo cuando una opción está activa */
+  .bottom-nav a.active {
+    color: #FFB700;
+    transform: scale(1.1);
+  }
+  
+  /* Efecto de círculo sobre el ítem seleccionado */
+  .bottom-nav a.active .nav-icon::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70px;
+      height: 70px;
+      background: rgb(227 226 220 / 20%);
+      border-radius: 34%;
+      border: 3px solid #e8e8e80d;
+      z-index: -1;
+      transition: all 0.3s ease-in-out;
+  }
+  
+  /* Estilo del ícono activo */
+  .bottom-nav a.active i {
+    font-size: 2.1rem;
+    color: #FFB700;
+    transform: scale(1.2);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Espaciado adicional para el contenido para evitar solapamiento */
+  .dashboard-content {
+    padding-bottom: 100px; /* Espacio para no tapar el contenido */
+  }

@@ -1,0 +1,200 @@
+<p-dialog
+  (onHide)="hideModal()"
+  [(visible)]="displayModal"
+  [modal]="true"
+  [style]="{ width: '30vw' }"
+  [draggable]="false"
+  [resizable]="false"
+>
+  <div *ngIf="loading" class="flex justify-content-center align-items-center">
+    <p-progressSpinner  ariaLabel="Loading"></p-progressSpinner>
+  </div>
+  <ng-template pTemplate="header">
+    <h4 class="m-0">{{ title }}</h4>
+  </ng-template>
+  <ng-template pTemplate="content">
+    <div class="grid" *ngIf="!loading">
+      <div class="col-12">
+        <hr class="m-0" />
+      </div>
+
+      <div *ngIf="isLoading" class="flex justify-content-center align-items-center">
+        <p-progressSpinner ariaLabel="isLoading"></p-progressSpinner>
+      </div>
+
+      <!-- Form -->
+      <form
+        name="frmAlumnos"
+        id="frmAlumnos"
+        class="col-12 sm:col-12 md:col-12 lg:col-12"
+        [formGroup]="frmAlumnos"
+        (ngSubmit)="onSubmit()"
+      >
+      <ng-container *ngIf="!isLoading">
+        <div class="col-12 sm:col-12 md:col-12 lg:col-12">
+          <div class="formgrid grid m-0">
+
+            <div class="grid col-12 md:col-12">
+                <div class="col-12 sm:col-12 md:col-12 lg:col-12 p-0">
+                  <div class="field form-group grid align-items-center">
+                    <label for="nombre" class="col-12 sm:col-12 md:col-12 lg:col-12">Nombre</label>
+                    <div class="col-12 sm:col-12 md:col-12 lg:col-112">
+                      <input 
+                        pInputText 
+                        id="nombre" 
+                        class="w-full"
+                        formControlName="nombre"/>
+                      <small *ngIf="frmAlumnos.get('nombre')?.invalid && frmAlumnos.get('nombre')?.touched" class="p-error">
+                        Nombre es requerido.
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid col-12 md:col-12">
+                <div class="col-12 sm:col-12 md:col-12 lg:col-12 p-0">
+                  <div class="field form-group grid align-items-center">
+                    <label for="fecha_nacimiento" class="col-12 sm:col-12 md:col-12 lg:col-12">Fecha de nacimiento</label>
+                    <div class="col-12 sm:col-12 md:col-12 lg:col-12">
+                      <p-calendar 
+                        [showIcon]="true" 
+                        styleClass="w-full"
+                        [showOnFocus]="false" 
+                        dateFormat="dd/mm/yy"
+                        inputId="buttondisplay"
+                        formControlName="fecha_nacimiento" />
+                      <small *ngIf="frmAlumnos.get('fecha_nacimiento')?.invalid && frmAlumnos.get('fecha_nacimiento')?.touched" class="p-error">
+                        Fecha de nacimiento es requerido.
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid col-12 md:col-12">
+                <div class="col-12 sm:col-12 md:col-12 lg:col-12 p-0">
+                  <div class="field form-group grid align-items-center">
+                    <label for="nombre_padre" class="col-12 sm:col-12 md:col-12 lg:col-12">Nombre del padre</label>
+                    <div class="col-12 sm:col-12 md:col-12 lg:col-112">
+                      <input 
+                      pInputText 
+                      id="nombre_padre" 
+                      class="w-full"
+                      formControlName="nombre_padre"/>
+                      <small *ngIf="frmAlumnos.get('nombre_padre')?.invalid && frmAlumnos.get('nombre_padre')?.touched" class="p-error">
+                        Nombre es requerido.
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid col-12 md:col-12">
+                <div class="col-12 sm:col-12 md:col-12 lg:col-12 p-0">
+                  <div class="field form-group grid align-items-center">
+                    <label for="nombre_madre" class="col-12 sm:col-12 md:col-12 lg:col-12">Nombre de la madre</label>
+                    <div class="col-12 sm:col-12 md:col-12 lg:col-112">
+                      <input 
+                      pInputText 
+                      id="nombre_madre" 
+                      class="w-full"
+                      formControlName="nombre_madre"/>
+                      <small *ngIf="frmAlumnos.get('nombre_madre')?.invalid && frmAlumnos.get('nombre_madre')?.touched" class="p-error">
+                        Nombre es requerido.
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid col-12 md:col-12 p-0">
+                <div class="col-12 sm:col-12 md:col-6 lg:col-6">
+                  <div class="field form-group grid align-items-center">
+                    <label for="grado" class="col-12 sm:col-12 md:col-12 lg:col-12">Grado</label>
+                    <div class="col-12 sm:col-12 md:col-12 lg:col-112">
+                      <input 
+                      pInputText 
+                      id="grado" 
+                      class="w-full"
+                      formControlName="grado"/>
+                      <small *ngIf="frmAlumnos.get('grado')?.invalid && frmAlumnos.get('grado')?.touched" class="p-error">
+                        Grado es requerido.
+                      </small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 sm:col-12 md:col-6 lg:col-6">
+                  <div class="field form-group grid align-items-center">
+                    <label for="seccion" class="col-12 sm:col-12 md:col-12 lg:col-12">Sección</label>
+                    <div class="col-12 sm:col-12 md:col-12 lg:col-112">
+                      <input 
+                      pInputText 
+                      id="seccion" 
+                      class="w-full"
+                      formControlName="seccion"/>
+                      <small *ngIf="frmAlumnos.get('seccion')?.invalid && frmAlumnos.get('seccion')?.touched" class="p-error">
+                        Sección es requerida.
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid col-12 md:col-12">
+                <div class="col-12 sm:col-12 md:col-12 lg:col-12 p-0">
+                  <div class="field form-group grid align-items-center">
+                    <label for="fecha_ingreso" class="col-12 sm:col-12 md:col-12 lg:col-12">Fecha de ingreso</label>
+                    <div class="col-12 sm:col-12 md:col-12 lg:col-112">
+                      <p-calendar 
+                        [showIcon]="true" 
+                        styleClass="w-full"
+                        [showOnFocus]="false" 
+                        dateFormat="dd/mm/yy"
+                        inputId="buttondisplay"
+                        formControlName="fecha_ingreso" />
+                      <small *ngIf="frmAlumnos.get('fecha_ingreso')?.invalid && frmAlumnos.get('fecha_ingreso')?.touched" class="p-error">
+                        Fecha de ingreso es requerida.
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </ng-container>
+        <!-- Botonera -->
+        <div class="grid col-12 p-0 mt-1 justify-content-end">
+          <div class="col-12 sm:col-12 md:col-4 lg:col-4">
+            <button
+              styleClass="button-cancel"
+              pButton
+              class="p-button-rounded w-full p-button-danger p-button-outlined p-mb-3"
+              type="button"
+              (click)="hideModal()"
+              icon="pi pi-replay"
+              label="Cancelar"
+            ></button>
+          </div>
+          <div class="col-12 sm:col-12 md:col-4 lg:col-4">
+            <button
+              styleClass="button-save"
+              pButton
+              [disabled]="loading"
+              class="p-button-rounded w-full p-button-success p-button-outlined p-mb-3"
+              type="submit"
+              icon="pi pi-save"
+              label="Guardar"
+            ></button>
+          </div>
+        </div>
+        <!-- END Botonera -->
+      </form>
+      <!-- END Form -->
+    </div>
+  </ng-template>
+  <ng-template pTemplate="footer"> </ng-template>
+</p-dialog>
+
+
