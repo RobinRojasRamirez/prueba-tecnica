@@ -8,7 +8,6 @@ import { IAlumnoTable } from '../interfaces/alumno-table.interface';
 import { IAlumnoShow } from '../interfaces/alumno-show.interface';
 import { IResponseApi } from '../../../shared/interfaces/response-api.interface';
 
-
 @Injectable({
   providedIn: 'root',
 })

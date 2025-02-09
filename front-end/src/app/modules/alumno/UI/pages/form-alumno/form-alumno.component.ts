@@ -113,7 +113,6 @@ export class FormAlumnoComponent {
     }
   }
 
-
   async onSubmit(): Promise<void> {
     if ( this.frmAlumnos.valid ) {
       const transformedData = this.transformData()
